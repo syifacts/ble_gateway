@@ -1,0 +1,68 @@
+const Dashboard = {
+  async render() {
+    return `
+      <div class="dashboard-header">
+        <h4>Dashboard <span>/ Device Location</span></h4>
+      </div>
+
+      <div class="summary-cards">
+        <div class="summary-card">Heartbeat <h2>80</h2></div>
+        <div class="summary-card">Param Report <h2>80</h2></div>
+        <div class="summary-card">Registration <h2>80</h2></div>
+        <div class="summary-card">Total Message <h2>240</h2></div>
+      </div>
+
+      <div class="data-section mt-4">
+        <h5>Data Decoded</h5>
+        
+        <div class="filters">
+          <select>
+            <option>All Message Type</option>
+          </select>
+          <input type="date" value="2025-04-23" />
+          <input type="date" value="2025-04-23" />
+          <button class="btn btn-success">Filter Date</button>
+          <button class="btn btn-secondary">Reset Date</button>
+        </div>
+
+        <div class="table-responsive mt-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>message_type</th>
+                <th>state</th>
+                <th>battery_voltage</th>
+                <th>battery_level</th>
+                <th>ble_rx_count</th>
+                <th>param_16</th>
+                <th>param_242</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Heartbeat</td><td>33800000</td><td>21.8</td><td>100</td><td>1234</td><td>-</td><td>-</td></tr>
+              <tr><td>2</td><td>Parameter Report</td><td>33800000</td><td>21.9</td><td>98</td><td>2345</td><td>69840</td><td>-</td></tr>
+              <tr><td>3</td><td>Registration</td><td>33800001</td><td>22.0</td><td>95</td><td>4523</td><td>-</td><td>-</td></tr>
+              <tr><td>4</td><td>Heartbeat</td><td>33800000</td><td>21.9</td><td>100</td><td>5678</td><td>-</td><td>-</td></tr>
+              <tr><td>5</td><td>Registration</td><td>33800001</td><td>22.0</td><td>100</td><td>4567</td><td>-</td><td>-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button disabled>&lt;</button>
+          <button>3</button>
+          <button class="active">4</button>
+          <button>5</button>
+          <button>&gt;</button>
+        </div>
+      </div>
+    `;
+  },
+
+  async afterRender() {
+    // Tambahkan interaksi jika diperlukan
+  }
+};
+
+export default Dashboard;
