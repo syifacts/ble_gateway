@@ -15,12 +15,18 @@ const Dashboard = {
       <div class="data-section mt-4">
         <h5>Data Decoded</h5>
         
+        <div class="judul">
+          <div class="judul"> Message Type </div>
+          <div class="judul"> Start Date </div>
+          <div class="judul"> End Date </div>
+        </div>
+        
         <div class="filters">
           <select>
             <option>All Message Type</option>
           </select>
-          <input type="date" value="2025-04-23" />
-          <input type="date" value="2025-04-23" />
+          <input type="date" value="" />
+          <input type="date" value="" />
           <button class="btn btn-success">Filter Date</button>
           <button class="btn btn-secondary">Reset Date</button>
         </div>
