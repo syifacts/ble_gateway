@@ -4,13 +4,25 @@ const Dashboard = {
       <div class="dashboard-header">
         <h4>Dashboard <span>/ Device Location</span></h4>
       </div>
+<div class="summary-cards">
+  <div class="summary-card">
+    <img src="icons/heartbeat.png" alt="heartbeat" class="icon-summary" />
+    Heartbeat <h2>80</h2>
+  </div>
+  <div class="summary-card">
+    <img src="icons/param.png" alt="param report" class="icon-summary" />
+    Param Report <h2>80</h2>
+  </div>
+  <div class="summary-card">
+    <img src="icons/regis.png" alt="registration" class="icon-summary" />
+    Registration <h2>80</h2>
+  </div>
+  <div class="summary-card">
+    <img src="icons/total.png" alt="total message" class="icon-summary" />
+    Total Message <h2>240</h2>
+  </div>
+</div>
 
-      <div class="summary-cards">
-        <div class="summary-card">Heartbeat <h2>80</h2></div>
-        <div class="summary-card">Param Report <h2>80</h2></div>
-        <div class="summary-card">Registration <h2>80</h2></div>
-        <div class="summary-card">Total Message <h2>240</h2></div>
-      </div>
 
       <div class="data-section mt-4">
         <h5>Data Decoded</h5>
