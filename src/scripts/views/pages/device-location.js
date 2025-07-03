@@ -1,3 +1,6 @@
+
+import 'leaflet/dist/leaflet.css';
+
 const DeviceLocation = {
   async render() {
     return `
@@ -33,6 +36,8 @@ const DeviceLocation = {
     L.marker(center).addTo(map)
       .bindPopup('Perangkat berada di lokasi ini.')
       .openPopup();
+
+      
   }
 };
 
