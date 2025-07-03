@@ -7,19 +7,30 @@ const Dashboard = {
 <div class="summary-cards">
   <div class="summary-card">
     <img src="icons/heartbeat.png" alt="heartbeat" class="icon-summary" />
-    Heartbeat <h2>80</h2>
+    Total Devices <h2>80</h2>
   </div>
   <div class="summary-card">
     <img src="icons/param.png" alt="param report" class="icon-summary" />
-    Param Report <h2>80</h2>
+    Selected Device <h2>80</h2>
   </div>
   <div class="summary-card">
     <img src="icons/regis.png" alt="registration" class="icon-summary" />
-    Registration <h2>80</h2>
+    Voltage <h2>80</h2>
   </div>
   <div class="summary-card">
     <img src="icons/total.png" alt="total message" class="icon-summary" />
-    Total Message <h2>240</h2>
+    Battery <h2>240</h2>
+  </div>  <div class="summary-card">
+    <img src="icons/total.png" alt="total message" class="icon-summary" />
+    Last Update <h2>240</h2>
+  </div>
+    <div class="summary-card">
+    <img src="icons/total.png" alt="total message" class="icon-summary" />
+    Status <h2>240</h2>
+  </div>
+    <div class="summary-card">
+    <img src="icons/total.png" alt="total message" class="icon-summary" />
+    Last Acitivity <h2>240</h2>
   </div>
 </div>
 

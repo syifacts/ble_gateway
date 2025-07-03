@@ -11,34 +11,36 @@ class App {
     window.addEventListener('hashchange', () => this.renderPage());
     window.addEventListener('load', () => this.renderPage());
   }
+_updateNavigation(currentUrl = '') {
+  const nav = document.getElementById('navigationDrawer');
+  if (!nav) return;
 
-  _updateNavigation(currentUrl = '') {
-    const nav = document.getElementById('navigationDrawer');
-    if (!nav) return;
-
-    nav.innerHTML = `
-      <h2 class="text-white text-center mt-4">BLE Gateway</h2>
-      <ul class="nav flex-column mt-5">
-        <li class="nav-item">
-          <a href="#/dashboard" class="nav-link">📊 Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a href="#/device-location" class="nav-link">📍 Device Location</a>
-        </li>
+  nav.innerHTML = `
+    <div class="topbar">
+     <div class="topbar-left">
+      <h2>BLE <br> Gateway</h2>
+      <div class="topbar-center">
+      <ul>
+        <li><a href="#/dashboard" class="nav-link">Dashboard</a></li>
+        <li><a href="#/device-location" class="nav-link">Device Location</a></li>
+        <li><a href="#/device-management" class="nav-link">Device Management</a></li>
       </ul>
-    `;
+    </div>
+    </div>
+  `;
 
-    // Highlight active nav item
-    const links = nav.querySelectorAll('.nav-link');
-    links.forEach(link => {
-      const href = link.getAttribute('href')?.replace('#', '');
-      if (href === currentUrl) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }
+  const links = nav.querySelectorAll('.nav-link');
+  links.forEach(link => {
+    const href = link.getAttribute('href')?.replace('#', '');
+    if (href === currentUrl) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();

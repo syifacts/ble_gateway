@@ -6,47 +6,82 @@ body {
   color: #333;
 }
 
-/* Sidebar */
-.sidebar {
+/* Topbar Navigation */
+.topbar {
   background: #1f5cbf;
   color: white;
-  width: 220px;
-  height: 100vh;
+  width: 100%;
+  height: 100px;
   position: fixed;
-  padding: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 0 2rem;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.sidebar h2 {
-  text-align: center;
+/* Judul / Logo */
+.topbar h2 {
   font-size: 20px;
-  margin-bottom: 2rem;
+  margin: 0;
+}
+.topbar-left,
+.topbar-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.sidebar ul {
+.topbar-left {
+  justify-content: flex-start;
+  margin-left: 50px;
+}
+
+.topbar-center {
+  justify-content: center;
+}
+
+
+/* Nav Links */
+.topbar ul {
   list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
   padding: 0;
 }
 
-.sidebar .nav-link {
-  display: block;
+.nav-link {
   text-decoration: none;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  padding: 10px 16px;
+  border-radius: 6px;
   transition: background 0.3s;
 }
 
-.sidebar .nav-link.active,
-.sidebar .nav-link:hover {
+.nav-link.active,
+.nav-link:hover {
   background-color: #174da0;
+}
+
+/* Konten utama didorong ke bawah agar tidak tertutup topbar */
+#mainContent {
+  padding-top: 80px; /* tergantung tinggi .topbar */
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /* Main */
 .content {
   margin-left: 220px;
   padding: 2rem;
+  margin-top: 50px;
 }
 
 /* Header */
@@ -54,6 +89,7 @@ body {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
+  
 }
 .dashboard-header span {
   color: #aaa;
@@ -62,28 +98,33 @@ body {
 
 /* Summary Cards */
 .summary-cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
   margin-top: 20px;
 }
+.summary-card h2 {
+  font-size: 15px;
+  color: #1f5cbf;
+  margin-top: 4px;
+}
+
 
 .summary-card {
   background: white;
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  min-width: 150px;
   text-align: center;
   font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80px; /* atau sesuaikan */
 }
 
-.summary-card h2 {
-  margin-top: 10px;
-  font-size: 28px;
-  color: #1f5cbf;
-}
 
 /* Filters */
 .filters {
@@ -183,8 +224,17 @@ body {
 }
 
 .icon-summary {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   display: block;
   margin: 0 auto 0.5rem;
+  margin-top: 10px;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  z-index: 0;
 }
