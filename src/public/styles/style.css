@@ -8,7 +8,7 @@ body {
 
 /* Topbar Navigation */
 .topbar {
-  background: #1f5cbf;
+  background: linear-gradient(to right, #052684, #0F67B1);
   color: white;
   width: 100%;
   height: 100px;
