@@ -4,6 +4,9 @@ import 'leaflet/dist/leaflet.css';
 const DeviceLocation = {
   async render() {
     return `
+          <div class="dashboard-header">
+        <h4>Dashboard <span>/ Device Location</span></h4>
+      </div>
       <div class="device-location-page">
         <h2 class="mb-4">Device Location</h2>
         <div id="map" class="map-container"></div>

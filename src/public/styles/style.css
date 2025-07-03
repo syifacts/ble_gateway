@@ -237,4 +237,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
 }
-
+.breadcrumb-header .active {
+  font-weight: bold;
+  color: #1f5cbf;
+}
