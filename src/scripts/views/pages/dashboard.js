@@ -28,30 +28,41 @@ const Dashboard = {
     <img src="icons/total.png" alt="total message" class="icon-summary" />
     Status <h2>240</h2>
   </div>
-    <div class="summary-card">
-    <img src="icons/total.png" alt="total message" class="icon-summary" />
-    Last Acitivity <h2>240</h2>
   </div>
+  <br>
+  <div class="data-toggle">
+  <span id="tab-table" class="tab active">Tabel Data </span>
+  <span id="atau" class="atau">/ </span>
+  <span id="tab-graphic" class="tab">Graphic Data</span>
+</div>
+<br>
+
 </div>
 
 
-      <div class="data-section mt-4">
-        <h5>Data Decoded</h5>
-        
+      <div id="data-table-section" class="table-responsive mt-4">
         <div class="judul">
-          <div class="judul"> Message Type </div>
-          <div class="judul"> Start Date </div>
-          <div class="judul"> End Date </div>
+          <div class="judul"> Device IMEI </div>
+          <div class="start"> Start Date </div>
+          <div class="end"> End Date </div>
         </div>
-        
+        <div id="graphic-section" class="data-section mt-4" style="display: none;">
+  <h5>Graphic Data</h5>
+  <p>Visualisasi data akan ditampilkan di sini.</p>
+  <!-- Tambahkan chart atau visualisasi sesuai kebutuhan -->
+</div>
+
         <div class="filters">
           <select>
             <option>All Message Type</option>
           </select>
+          <div class="date-group">
           <input type="date" value="" />
           <input type="date" value="" />
+           </div>
           <button class="btn btn-success">Filter Date</button>
           <button class="btn btn-secondary">Reset Date</button>
+          <button class="btn btn-excel">Excel</button>
         </div>
 
         <div class="table-responsive mt-3">
@@ -90,8 +101,26 @@ const Dashboard = {
   },
 
   async afterRender() {
-    // Tambahkan interaksi jika diperlukan
-  }
+  const tabTable = document.getElementById('tab-table');
+  const tabGraphic = document.getElementById('tab-graphic');
+  const tableSection = document.getElementById('data-table-section');
+  const graphicSection = document.getElementById('graphic-section');
+
+  tabTable.addEventListener('click', () => {
+    tabTable.classList.add('active');
+    tabGraphic.classList.remove('active');
+    tableSection.style.display = 'block';
+    graphicSection.style.display = 'none';
+  });
+
+  tabGraphic.addEventListener('click', () => {
+    tabGraphic.classList.add('active');
+    tabTable.classList.remove('active');
+    tableSection.style.display = 'none';
+    graphicSection.style.display = 'block';
+  });
+}
+
 };
 
 export default Dashboard;
